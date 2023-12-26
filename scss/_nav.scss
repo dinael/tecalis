@@ -1,0 +1,79 @@
+.main-nav {
+  display: flex;
+  margin-block-end: var(--main-nav-margin-block-end, 4rem);
+  padding-block: 1rem;
+
+  &__btn {
+    display: var(--main-nav-btn-display, none);
+    align-items: center;
+    justify-content: center;
+    block-size: 2.5rem;
+    inline-size: 3rem;
+    margin-inline-start: auto;
+    cursor: pointer;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    inline-size: var(--main-nav-inline-size, var(--main-inline-size));
+    margin-inline: auto;
+  }
+
+  &__logo {
+    block-size: 3rem;
+    inline-size: auto;
+
+    + .main-nav__menu {
+      margin-inline-start: 5rem;
+    }
+  }
+
+  &__menu {
+    inline-size: 100%;
+    margin-inline: 0;
+    padding-block: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    block-size: 100%;
+  }
+
+  .nav {
+    &__link {
+      --nav-link-color: var(--color-secondary-dark);
+
+      display: flex;
+      align-items: center;
+      color: var(--nav-link-color);
+      font-weight: 700;
+      text-decoration: none;
+      padding-block: 0.5rem;
+      padding-inline: 0.5rem;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        --nav-link-color: var(--color-secondary);
+      }
+
+      &[aria-current='page'] {
+        --nav-link-color: var(--color-primary);
+      }
+    }
+  }
+
+  @media (max-width: 50rem) {
+    --main-nav-margin-block-end: 2rem;
+    --main-nav-btn-display: flex;
+
+    .main-nav__menu {
+      display: none;
+    }
+  }
+}

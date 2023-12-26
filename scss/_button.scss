@@ -1,0 +1,25 @@
+[class*='button--'] {
+  --button-color: var(--color-positive);
+  --button-bg: var(--color-primary);
+
+  display: inline-flex;
+  gap: 1rem;
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  font-size: clamp(1.125rem, 1.0718rem + 0.198vw, 1.25rem);
+  font-weight: 700;
+  border-radius: 1rem;
+  border: max(2px, 0.125rem) solid var(--button-border-color, transparent);
+  color: var(--button-color);
+  background: var(--button-bg);
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.button {
+  &--primary {
+    &:hover {
+      --button-bg: var(--color-primary-dark);
+    }
+  }
+}

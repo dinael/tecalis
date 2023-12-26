@@ -1,0 +1,19 @@
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  inline-size: 100%;
+  min-block-size: -webkit-fill-available; // Fallback support iOS
+  min-block-size: 100dvh;
+  text-rendering: optimizeSpeed;
+  accent-color: var(--color-primary-dark);
+  font-family: var(--font-family-primary, 'sans');
+  font-size: var(--font-size-primary, 1rem);
+  font-weight: var(--font-weight, normal);
+  line-height: var(--font-line-height, 1.25);
+  color: var(--color-text-primary);
+  background: url(../img/bg-shape.png) top right no-repeat var(--bg-primary);
+
+  @media (max-width: 50rem) {
+    background: var(--bg-primary);
+  }
+}

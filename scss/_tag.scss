@@ -1,0 +1,16 @@
+.tag {
+  font-weight: 700;
+  max-inline-size: fit-content;
+  border-radius: 10rem;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  border: max(0.125rem, 2px) solid;
+  color: var(--tag-color, var(--color-secondary));
+  background: var(--tag-bg, transparent);
+  transition: background 0.2s ease-in-out;
+
+  &:hover {
+    --tag-color: var(--color-positive);
+    --tag-bg: var(--color-secondary);
+  }
+}

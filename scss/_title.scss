@@ -1,0 +1,32 @@
+[class*='title--'] {
+  font-weight: bold;
+  font-size: var(--title-size);
+  text-align: var(--title-align, left);
+  line-height: normal;
+
+  @media (max-width: 48rem) {
+    --title-align: center;
+  }
+}
+
+.title {
+  &--xxl {
+    --title-size: var(--title-size-xxl, 3rem);
+  }
+
+  &--xl {
+    --title-size: var(--title-size-xl, 2.25rem);
+  }
+
+  &--l {
+    --title-size: var(--title-size-l, 1.5rem);
+  }
+
+  &--m {
+    --title-size: var(--title-size-m, 1.125rem);
+  }
+
+  &--s {
+    --title-size: var(--title-size-s, 1rem);
+  }
+}

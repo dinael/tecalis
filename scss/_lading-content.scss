@@ -1,0 +1,142 @@
+.content {
+  padding: 4rem 2rem;
+
+  @media (max-width: 50rem) {
+    padding: 2rem 0;
+
+    .tab {
+      display: none;
+    }
+
+    .accordion {
+      display: grid;
+    }
+  }
+}
+
+.tab {
+  --tab-content-size: 49.375rem;
+
+  display: grid;
+  gap: 5rem;
+  //  grid-area: image navigation;
+
+  &__title {
+    padding-block-end: 2rem;
+  }
+
+  &__image {
+    //    grid-area: image;
+    display: grid;
+    inline-size: 100%;
+    grid-column: 1 / 2;
+    grid-row-start: 1;
+    padding-inline-start: 1rem;
+
+    & > img {
+      aspect-ratio: 16/9;
+      inline-size: 100%;
+      max-block-size: 25.6875rem;
+      border-radius: 1rem;
+      margin-inline-start: auto;
+    }
+  }
+
+  &__details {
+    padding-block: 2rem 0;
+    max-inline-size: var(--tab-content-size);
+  }
+}
+
+.accordion {
+  display: none;
+
+  details {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    border: max(1px, 0.0625rem) solid var(--color-secondary);
+
+    + details {
+      margin-block-start: 1rem;
+    }
+
+    &[open] {
+      --icon-rotate: 0;
+      --accordion-summary-bg: var(--color-primary-light);
+    }
+  }
+
+  &__title {
+    padding-block-end: 2rem;
+  }
+
+  &__summary {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--color-primary-dark);
+    background: var(--accordion-summary-bg, transparent);
+    cursor: pointer;
+  }
+
+  &__icon {
+    margin-inline-start: auto;
+    transition: transform 0.2s ease-in-out;
+    transform: rotate(var(--icon-rotate, -90deg));
+  }
+
+  &__image {
+    overflow: hidden;
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+
+    img {
+      aspect-ratio: 16/9;
+      max-height: 9.75rem;
+      margin-inline: auto;
+      border-radius: 1.125rem;
+    }
+  }
+}
+
+.tab-nav {
+  grid-column: 2 / 3;
+  grid-row-start: 1;
+  max-inline-size: 25rem;
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-block-end: 1rem;
+    background: var(--tab-nav-item-bg, transparent);
+  }
+
+  &__link {
+    display: inline-flex;
+    inline-size: 100%;
+    padding-inline: 1rem;
+    padding-block: 1rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    transition: background 0.2s ease-in-out;
+
+    &:hover {
+      --link-text-decoration: none;
+      --link-bg: var(--color-primary);
+    }
+
+    &.active {
+      --link-text-decoration: none;
+      --link-color: var(--color-primary-dark);
+      --link-bg: var(--color-primary);
+    }
+  }
+}

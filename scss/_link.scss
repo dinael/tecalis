@@ -1,0 +1,11 @@
+a {
+  text-decoration: var(--link-text-decoration, none);
+  color: var(--link-color, var(--color-secondary));
+  background: var(--link-bg);
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    --link-text-decoration: underline;
+    --link-color: var(--color-primary-dark);
+  }
+}
