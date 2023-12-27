@@ -60,17 +60,15 @@ main {
   margin-inline: auto;
 }
 
-:where(
-    a,
-    area,
-    button,
-    input,
-    label[for],
-    select,
-    summary,
-    textarea,
-    [tabindex]
-  ) {
+:where(a,
+  area,
+  button,
+  input,
+  label[for],
+  select,
+  summary,
+  textarea,
+  [tabindex]) {
   touch-action: manipulation;
 }
 
@@ -123,6 +121,13 @@ button {
   line-height: normal;
 }
 
+details,
+details summary {
+  padding-left: 0;
+  background-image: none;
+  -webkit-appearance: none;
+}
+
 // $$ Media queries
 @media (prefers-reduced-motion: no-preference) {
   html {
@@ -131,6 +136,7 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
